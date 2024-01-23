@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формы</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">Список группы</h1>
+                </div>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Возраст</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">Форма</h1>
+                </div>
+            </div>
+            <form onsubmit="addRow();return false">
+                <div class="form-group">
+                    <label for="Name">Имя</label>
+                    <input class="form-control" id="Name" placeholder="Имя">
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="Age">Возраст</label>
+                    <input class="form-control" id="Age" placeholder="Возраст">
+                </div>
+                <button id="MyButton" type="submit" class="btn btn-primary">Добавить</button>
+            </form>
+            <div id="messages"></div>
+        </div>
+    </main>
+    <script>
+        function addRow() {
+            let tbody = document.querySelector("tbody");
+            let row = document.createElement("tr");
+            let tName = document.createElement("td");
+            let tEmail = document.createElement("td");
+            let tAge = document.createElement("td");
+
+            let vName = document.getElementById("Name").value;
+            let vEmail = document.getElementById("Email").value;
+            let vAge = document.getElementById("Age").value;
+
+            if (vName !== "" && vEmail !== "" && vAge !== "") {
+                tName.innerHTML = vName;
+                tEmail.innerHTML = vEmail;
+                tAge.innerHTML = vAge;
+
+                row.appendChild(tName);
+                row.appendChild(tEmail);
+                row.appendChild(tAge);
+                tbody.appendChild(row);
+
+                console.log(tbody);
+            } else {
+                alert("Заполните все поля формы");
+            let block_error = document.createElement("div");
+            block_error.classList.add('alert');
+            block_error.className +=" alert-danger";
+            block_error.innerHTML = "Не все поля заполнены! Давай дописывай них!";
+            let block_messages = document.getElementById('messages');
+            block_messages.append(block_error);
+            window.setTimeout(function () {
+                block_messages.remove();
+            }, 1000);
+            block_messages.style.cssText = " text-align: center; ";
+            block_messages.style.marginTop = '20px';
+            
+            let  = document.createElement("div");
+            classList.add('');
+            className +=" Харош ";
+            innerHTML = "Все поля заполнены! Ура!";
+            let  = document.getElementById('messages');
+            append(block_error);
+            window.setTimeout(function () {
+                messages();
+            }, 1000);
+            block_messages.style.cssText = " text-align: center; ";
+            block_messages.style.marginTop = '20px';
+        }
+            }
+            
+
+        document.getElementById("MyButton").onclick = function (event) {
+            addRow();
+            return false;
+        }
+    </script>
+    <body id = "top">
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <a id="toButton" class="text-succes" href="#MyButton">Хочу наполнить таблицу</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button id="MyButton" type="submit" class="btn btn-primary"></button>
+                    <div class="">
+                        <a href="#top">Посмотреть ОБНОООООВУУУУУУ!!!!</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script>
+        var person = {
+            name: "Игорь",
+            age: 10,
+        }
+        function person(name,age,color) {
+            this = name;
+            this = age;
+            this = colot;
+        } 
+    const anchors = document.querySelectorAll('<a  href*="#">');
+        for (let anchor of anchors){
+            anchor.addEventlistener("click", function(event){
+              event.preventDefault();
+              let blockid = this.getAttribute("href");
+              document.querySelector('' + blockid).scrollIntoView({
+                  behavior: "smooth",
+                  block: "start"
+            });
+        });
+        }
+    </script>
+</body>
+</html>
